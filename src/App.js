@@ -1,18 +1,15 @@
 import React from 'react';
 import './App.css';
+import Entry from './components/Entry.js'
 
+import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 import Container from '@material-ui/core/Container';
-import MainForm from './components/MainForm';
-import Paper from '@material-ui/core/Paper';
 import AppBar from '@material-ui/core/AppBar';
 import Switch from '@material-ui/core/Switch';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import CssBaseline from "@material-ui/core/CssBaseline";
-import Typography from '@material-ui/core/Typography';
-import Divider from '@material-ui/core/Divider';
-import LinearDeterminate from './components/material-components/progressBar';
-
-import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
+import Paper from '@material-ui/core/Paper';
+import Button from '@material-ui/core/Button';
 
 const themeObject = {
   palette: {
@@ -44,41 +41,71 @@ const useDarkMode = () => {
 
 
 function App() {
+  // Making the dark/light mode toggle
   const [theme, toggleDarkMode] = useDarkMode();
 
   const themeConfig = createMuiTheme(theme);
   const [state, setState] = React.useState({
     checkedA: true,
     checkedB: false,
+    entry: false
   });
+
+  const beginQuiz = () => {
+    setState({ ...state, entry: true})
+  }
 
   const handleChange = name => event => {
     setState({ ...state, [name]: event.target.checked });
   };
 
-  return (
-    <MuiThemeProvider theme={themeConfig}>
-      <CssBaseline/>
-      <Container maxWidth="md">
-        <AppBar position="fixed" style={{ padding: '10px'}}>
-          <FormControlLabel
-            control={
-              <Switch onClick={toggleDarkMode} checked={state.checkedA} onChange={handleChange('checkedA')} value="checkedA" />
-            }
-            label="Toggle light/dark theme"
-          />
-        </AppBar>
-        <Paper style={{ marginTop: '10%'}}>
-          <Typography variant="body1" style={{padding: '10px 20px'}}>
-            Calculate the costs of your design project
-          </Typography>
-          <Divider />
-          <MainForm />
-          <LinearDeterminate />
-        </Paper>
-      </Container>
-    </MuiThemeProvider>
-  );
+  const entry = state.entry;
+  
+  switch(entry) {
+    case false:
+      return (
+        <MuiThemeProvider theme={themeConfig}>
+          <CssBaseline/>
+          <Container maxWidth="md">
+            <AppBar position="fixed" style={{ padding: '10px'}}>
+              <FormControlLabel
+                control={
+                  <Switch onClick={toggleDarkMode} checked={state.checkedA} onChange={handleChange('checkedA')} value="checkedA" />
+                }
+                label="Toggle light/dark theme"
+              />
+            </AppBar>
+            <Paper style={{ marginTop: '10%'}}>
+            <Button variant="contained" color="primary" style={{margin: '20px 10px'}} onClick={beginQuiz}>
+              Begin quiz
+            </Button>
+            </Paper>
+          </Container>
+        </MuiThemeProvider>
+      )
+
+    case true:
+      return (
+        <MuiThemeProvider theme={themeConfig}>
+          <CssBaseline/>
+          <Container maxWidth="md">
+            <AppBar position="fixed" style={{ padding: '10px'}}>
+              <FormControlLabel
+                control={
+                  <Switch onClick={toggleDarkMode} checked={state.checkedA} onChange={handleChange('checkedA')} value="checkedA" />
+                }
+                label="Toggle light/dark theme"
+              />
+            </AppBar>
+            <Paper style={{ marginTop: '10%'}}>
+              <Entry />
+            </Paper>
+          </Container>
+        </MuiThemeProvider>
+      )
+
+      default:
+  }
 }
 
 export default App;

@@ -11,7 +11,7 @@ export class Step1 extends Component {
   }
 
   render() {
-    const { values } = this.props;
+    // const { values } = this.props;
 
     return (
       <div>
