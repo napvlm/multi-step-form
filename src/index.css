@@ -11,3 +11,58 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.MuiContainer-root {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+.column-image {
+  background-image: url(https://res.cloudinary.com/hgwipn3sa/image/upload/dpr_1.0,f_auto/cqehntcsihq3slerla7n.jpg);
+  background-position: center center;
+  background-size: cover;
+  position: relative;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  margin-left: 12px;
+}
+
+.fade {
+  -webkit-animation: fade 500ms ease-in;
+  animation: fade 500ms ease-in; 
+}
+
+@keyframes fade {
+  0% {
+      opacity: 0;;
+  }
+  100% {
+      opacity: 1;
+  }
+}
+
+.bigAvatar {
+  height: 70px !important;
+  width: 70px !important;
+}
+
+.switch {
+  padding: 20px;
+}
+
+/* Remove arrows from input type number */
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance:textfield;
+}

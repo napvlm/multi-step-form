@@ -36,7 +36,7 @@ export default function LinearDeterminate() {
   return (
     <div className={classes.root}>
       <Typography variant="body2" style={{padding: '10px 20px'}}>
-        Progress: {completed}%
+        Completed: {completed}%
       </Typography>
       <LinearProgress variant="determinate" value={completed} />
     </div>
