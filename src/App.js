@@ -1,19 +1,11 @@
 import React from 'react';
 import './App.css';
 
-import Entry from './components/Entry.js'
+import { MuiThemeProvider, createMuiTheme, Grid, Container, Switch, FormControlLabel, CssBaseline, Paper, Button, Typography, Divider, Avatar } from "@material-ui/core/";
 
-import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
-import Grid from '@material-ui/core/Grid';
-import Container from '@material-ui/core/Container';
-import Switch from '@material-ui/core/Switch';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import CssBaseline from "@material-ui/core/CssBaseline";
-import Paper from '@material-ui/core/Paper';
-import Button from '@material-ui/core/Button';
-import { Typography } from '@material-ui/core';
-import Avatar from '@material-ui/core/Avatar';
-
+import MainForm from './components/MainForm';
+import PaperSheet from './components/material-components/DialogBox';
+import LinearDeterminate from './components/material-components/ProgressBar';
 
 const themeObject = {
   palette: {
@@ -114,10 +106,26 @@ function App() {
             <Paper className="fade">
             <Grid container spacing={3}>
               <Grid item xs={9}>
-                <Entry />
+              <Typography variant="body1" style={{padding: '10px 20px'}}>
+                Calculate the costs of your design project
+                </Typography>
+                <Divider />
+                <MainForm />
+                <LinearDeterminate />
               </Grid>
               <Grid item xs={3}>
-                <Avatar alt="Remy Sharp" src="https://res.cloudinary.com/hgwipn3sa/image/upload/w_70,h_70,c_fill,g_face,dpr_1.0,f_auto/e6lzsb63hzgy3tcopu0u.jpg" className="bigAvatar" />
+                <div style={{display: 'flex'}}>
+                  <Avatar alt="Johny Simpson - Lead designer" src="https://randomuser.me/api/portraits/men/22.jpg" className="bigAvatar" />
+                  <div style={{marginLeft: '10px'}}>
+                    <Typography variant="body1">
+                      John Simpson
+                    </Typography>
+                    <Typography variant="body2">
+                      <i>- Lead Designer</i>
+                    </Typography>
+                  </div>
+                </div>
+                <PaperSheet className='fade'/>
               </Grid>
             </Grid>
             </Paper>

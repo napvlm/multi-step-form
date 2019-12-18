@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import Button from '@material-ui/core/Button';
-import Typography from '@material-ui/core/Typography';
 import DiscreteSlider from './material-components/Slider'
+
+import { Typography, Button } from '@material-ui/core';
 
 export class Step2 extends Component {
   

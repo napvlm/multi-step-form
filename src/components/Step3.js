@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import DesignStyleCards from './material-components/DesignStyleCards'
 
-import Button from '@material-ui/core/Button';
-import Typography from '@material-ui/core/Typography';
+import { Typography, Button } from '@material-ui/core';
 
 export class Step3 extends Component {
   

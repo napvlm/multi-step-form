@@ -1,7 +1,5 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import LinearProgress from '@material-ui/core/LinearProgress';
-import Typography from '@material-ui/core/Typography';
+import { makeStyles, LinearProgress, Typography } from '@material-ui/core';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -17,20 +15,13 @@ export default function LinearDeterminate() {
   const [completed, setCompleted] = React.useState(0);
 
   React.useEffect(() => {
-    function progress() {
-      setCompleted(oldCompleted => {
-        if (oldCompleted === 100) {
-          return 0;
-        }
-        const diff = Math.random() * 10;
-        return Math.min(oldCompleted + diff, 100);
-      });
-    }
-
-    const timer = setInterval(progress, 500);
-    return () => {
-      clearInterval(timer);
-    };
+    setCompleted(oldCompleted => {
+      if (oldCompleted === 100) {
+        return 0;
+      }
+      const diff = 25;
+      return Math.min(oldCompleted + diff, 100);
+    });
   }, []);
 
   return (

@@ -1,15 +1,14 @@
 import React, { Component } from 'react';
+import { Typography, Button } from '@material-ui/core';
 
-import Typography from '@material-ui/core/Typography';
 import CheckboxesGroup from './material-components/CheckboxesGroup';
-import Button from '@material-ui/core/Button';
 
 export class Step1 extends Component {
   continue = e => {
     e.preventDefault();
     this.props.nextStep();
   }
-
+  
   render() {
     // const { values } = this.props;
 

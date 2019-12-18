@@ -1,6 +1,5 @@
 import React from 'react';
-import Slider from '@material-ui/core/Slider';
-import Input from '@material-ui/core/Input';
+import { Slider, Input } from '@material-ui/core/';
 
 function valuetext(value) {
   return `${value}m²`;

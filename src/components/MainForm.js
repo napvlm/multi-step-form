@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import Step1 from './Step1';
 import Step2 from './Step2';
 import Step3 from './Step3';
+import Success from './Success';
 
 export class MainForm extends Component {
   state = {
@@ -56,7 +57,7 @@ export class MainForm extends Component {
             previousStep={this.previousStep}
             handleChange={this.handleChange}
             values={values}
-             />
+            />
         )
       case 3:
         return (
@@ -65,11 +66,13 @@ export class MainForm extends Component {
             previousStep={this.previousStep}
             handleChange={this.handleChange}
             values={values}
-             />
+            />
         )
       case 4:
           return (
-            <h1>Sucess</h1>
+            <Success
+            values={values}
+            />
           )
       default:
     }
