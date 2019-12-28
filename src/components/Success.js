@@ -4,7 +4,7 @@ export class Sucess extends Component {
   render() {
     return (
       <div>
-        
+        Sucess
       </div>
     )
   }

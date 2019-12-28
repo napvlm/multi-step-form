@@ -58,6 +58,18 @@ function App() {
 
   const entry = state.entry;
 
+  // Progrgess bar going back and forth (Saving state here while passing props to child components and change the state of {complete} by easy function inside MainForm.js)
+  const [complete, setCompleted] = React.useState(0);
+
+  React.useEffect(() => {
+    setCompleted(oldCompleted => {
+      if (oldCompleted >= 100) {
+        return 0;
+      }
+      return complete;
+    });
+  }, [complete]);
+
   switch(entry) {
     case false:
       return (
@@ -110,8 +122,8 @@ function App() {
                 Calculate the costs of your design project
                 </Typography>
                 <Divider />
-                <MainForm />
-                <LinearDeterminate />
+                <MainForm complete={complete} setCompleted={setCompleted} />
+                <LinearDeterminate complete={complete} setCompleted={setCompleted} />
               </Grid>
               <Grid item xs={3}>
                 <div style={{display: 'flex'}}>

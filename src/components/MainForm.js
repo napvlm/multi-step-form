@@ -21,6 +21,8 @@ export class MainForm extends Component {
     this.setState({
       step: step+1
     });
+    
+    this.props.setCompleted(this.props.complete + 25);
   }
 
   // Go back to previous step
@@ -29,6 +31,8 @@ export class MainForm extends Component {
     this.setState({
       step: step-1
     });
+
+    this.props.setCompleted(this.props.complete - 25);
   }
 
   // Handle fields change
@@ -40,6 +44,7 @@ export class MainForm extends Component {
     const { step } = this.state;
     const { propertyType, areaSpace, designStyle, estBudget, timeStart } = this.state;
     const values = { propertyType, areaSpace, designStyle, estBudget, timeStart };
+    const { complete, setCompleted } = this.props;
 
     switch(step) {
       case 1: 
@@ -48,6 +53,8 @@ export class MainForm extends Component {
             nextStep={this.nextStep}
             handleChange={this.handleChange}
             values={values}
+            setCompleted={setCompleted}
+            complete={complete}
           />
         )
       case 2:
@@ -57,6 +64,8 @@ export class MainForm extends Component {
             previousStep={this.previousStep}
             handleChange={this.handleChange}
             values={values}
+            setCompleted={setCompleted}
+            complete={complete}
             />
         )
       case 3:
@@ -66,6 +75,8 @@ export class MainForm extends Component {
             previousStep={this.previousStep}
             handleChange={this.handleChange}
             values={values}
+            setCompleted={setCompleted}
+            complete={complete}
             />
         )
       case 4:

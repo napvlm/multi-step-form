@@ -10,26 +10,16 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-export default function LinearDeterminate() {
+
+export default function LinearDeterminate({complete}) {
   const classes = useStyles();
-  const [completed, setCompleted] = React.useState(0);
-
-  React.useEffect(() => {
-    setCompleted(oldCompleted => {
-      if (oldCompleted === 100) {
-        return 0;
-      }
-      const diff = 25;
-      return Math.min(oldCompleted + diff, 100);
-    });
-  }, []);
-
+  
   return (
     <div className={classes.root}>
       <Typography variant="body2" style={{padding: '10px 20px'}}>
-        Completed: {completed}%
+        Completed by {complete}%
       </Typography>
-      <LinearProgress variant="determinate" value={completed} />
+      <LinearProgress variant="determinate" value={complete} />
     </div>
   );
 }

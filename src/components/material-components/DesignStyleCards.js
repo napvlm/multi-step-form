@@ -3,7 +3,7 @@ import { Grid, Card, CardActionArea, CardContent, CardMedia, Radio, FormControlL
 
 
 export default function DesignStyleCards() {
-  const [value, setValue] = React.useState('female');
+  const [value, setValue] = React.useState('');
 
   const handleChange = event => {
     setValue(event.target.value);
