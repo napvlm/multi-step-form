@@ -11,38 +11,24 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-export default function CheckboxesGroup() {
+export default function CheckboxesGroup({ handleChange} ) {
   const classes = useStyles();
-  const [state, setState] = React.useState({
-    house: false,
-    office: false,
-    restaurant: false,
-    appartament: false,
-    store: false,
-    another: false
-  });
-
-  const handleChange = name => event => {
-    setState({ ...state, [name]: event.target.checked });
-  };
-
-  const { house, office, restaurant, appartament, store, another } = state;
 
   return (
     <div className={classes.root}>
       <FormControl component="fieldset" className={classes.formControl}>
         <FormGroup>
           <FormControlLabel
-            control={<Checkbox checked={house} onChange={handleChange('house')} value="house" />}
+            control={<Checkbox onChange={handleChange('propertyType')} value="house" />}
             label="House"
           />
           <FormControlLabel
-            control={<Checkbox checked={office} onChange={handleChange('office')} value="office" />}
+            control={<Checkbox onChange={handleChange('propertyType')} value="office" />}
             label="Office"
           />
           <FormControlLabel
             control={
-              <Checkbox checked={restaurant} onChange={handleChange('restaurant')} value="restaurant" />
+              <Checkbox onChange={handleChange('propertyType')} value="restaurant" />
             }
             label="Restaurant"
           />
@@ -51,16 +37,16 @@ export default function CheckboxesGroup() {
       <FormControl component="fieldset" className={classes.formControl}>
         <FormGroup>
           <FormControlLabel
-            control={<Checkbox checked={appartament} onChange={handleChange('appartament')} value="appartament" />}
+            control={<Checkbox onChange={handleChange('propertyType')} value="appartament" />}
             label="Appartament"
           />
           <FormControlLabel
-            control={<Checkbox checked={store} onChange={handleChange('store')} value="store" />}
+            control={<Checkbox onChange={handleChange('propertyType')} value="store" />}
             label="Store"
           />
           <FormControlLabel
             control={
-              <Checkbox checked={another} onChange={handleChange('another')} value="another" />
+              <Checkbox onChange={handleChange('propertyType')} value="another" />
             }
             label="Sometheing elese..."
           />

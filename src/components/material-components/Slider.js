@@ -5,15 +5,17 @@ function valuetext(value) {
   return `${value}m²`;
 }
 
-export default function DiscreteSlider() {
+export default function DiscreteSlider({ handleChange }) {
   const [value, setValue] = React.useState(25);
 
   const handleSliderChange = (event, newValue) => {
     setValue(newValue);
+    handleChange('areaSpace');
   };
 
   const handleInputChange = event => {
     setValue(event.target.value === '' ? '' : Number(event.target.value));
+    handleChange('areaSpace');
   };
 
   const handleBlur = () => {

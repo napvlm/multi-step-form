@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import Step1 from './Step1';
 import Step2 from './Step2';
 import Step3 from './Step3';
+import Confirm from './Confirm';
 import Success from './Success';
 
 export class MainForm extends Component {
@@ -11,8 +12,6 @@ export class MainForm extends Component {
     propertyType: '',
     areaSpace: '',
     designStyle: '',
-    estBudget: '',
-    timeStart: ''
   }
 
   // Proceed to the next step
@@ -36,14 +35,15 @@ export class MainForm extends Component {
   }
 
   // Handle fields change
-  handleChange = input => e => {
-    this.setState({[input]: e.target.value});
+  handleChange = input => event => {
+    this.setState({ [input]: event.target.value });
+    console.log(this.state);
   }
 
   render() {
     const { step } = this.state;
-    const { propertyType, areaSpace, designStyle, estBudget, timeStart } = this.state;
-    const values = { propertyType, areaSpace, designStyle, estBudget, timeStart };
+    const { propertyType, areaSpace, designStyle } = this.state;
+    const values = { propertyType, areaSpace, designStyle };
     const { complete, setCompleted } = this.props;
 
     switch(step) {
@@ -80,6 +80,10 @@ export class MainForm extends Component {
             />
         )
       case 4:
+          return (
+            <Confirm />
+          )
+      case 5: 
           return (
             <Success
             values={values}
