@@ -6,16 +6,14 @@ function valuetext(value) {
 }
 
 export default function DiscreteSlider({ handleChange }) {
-  const [value, setValue] = React.useState(25);
+  const [value, setValue] = React.useState(0);
 
   const handleSliderChange = (event, newValue) => {
     setValue(newValue);
-    handleChange('areaSpace');
   };
 
   const handleInputChange = event => {
     setValue(event.target.value === '' ? '' : Number(event.target.value));
-    handleChange('areaSpace');
   };
 
   const handleBlur = () => {
@@ -27,7 +25,7 @@ export default function DiscreteSlider({ handleChange }) {
   };
 
   return (
-    <div style={{marginLeft: '20px'}}>
+    <div style={{marginLeft: '20px'}} onChange={handleChange('areaSpace')}>
       <Input
         value={value}
         margin="dense"
@@ -48,7 +46,7 @@ export default function DiscreteSlider({ handleChange }) {
         onChange={handleSliderChange}
         aria-labelledby="input-slider"
         step={1}
-        min={25}
+        min={0}
         max={400}
       />
     </div>

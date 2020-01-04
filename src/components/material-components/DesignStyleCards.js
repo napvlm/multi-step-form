@@ -2,16 +2,17 @@ import React from 'react';
 import { Grid, Card, CardActionArea, CardContent, CardMedia, Radio, FormControlLabel, FormControl, RadioGroup } from '@material-ui/core';
 
 
-export default function DesignStyleCards() {
-  const [value, setValue] = React.useState('');
+export default function DesignStyleCards({ handleChange }) {
+  // const [value, setValue] = React.useState('');
 
-  const handleChange = event => {
-    setValue(event.target.value);
-  };
+  // const handleChange = event => {
+  //   setValue(event.target.value);
+  //   console.log(value)
+  // };
 
   return (
     <FormControl component="fieldset">
-      <RadioGroup aria-label="position" name="position" value={value} onChange={handleChange} row>
+      <RadioGroup aria-label="position" name="position"  onChange={handleChange('designStyle')} row>
         <Grid container spacing={3} style={{padding: '3%'}}>
           <Grid item xs={4}>
             <Card>
@@ -26,7 +27,7 @@ export default function DesignStyleCards() {
                 <CardContent>
                 <FormControlLabel
                   value="luxury"
-                  control={<Radio color="primary" />}
+                  control={<Radio color="primary"/>}
                   label="Luxury"
                   labelPlacement="end"
                 />

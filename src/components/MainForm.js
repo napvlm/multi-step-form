@@ -37,7 +37,6 @@ export class MainForm extends Component {
   // Handle fields change
   handleChange = input => event => {
     this.setState({ [input]: event.target.value });
-    console.log(this.state);
   }
 
   render() {
@@ -80,15 +79,22 @@ export class MainForm extends Component {
             />
         )
       case 4:
-          return (
-            <Confirm />
-          )
-      case 5: 
-          return (
-            <Success
+        return (
+          <Confirm
+            nextStep={this.nextStep}
+            previousStep={this.previousStep}
+            handleChange={this.handleChange}
             values={values}
+            setCompleted={setCompleted}
+            complete={complete}
             />
-          )
+        )
+      case 5: 
+        return (
+          <Success
+            values={values}
+          />
+        )
       default:
     }
   }

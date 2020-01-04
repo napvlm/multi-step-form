@@ -10,7 +10,6 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-
 export default function LinearDeterminate({complete}) {
   const classes = useStyles();
   

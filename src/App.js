@@ -4,7 +4,6 @@ import './App.css';
 import { MuiThemeProvider, createMuiTheme, Grid, Container, Switch, FormControlLabel, CssBaseline, Paper, Button, Typography, Divider, Avatar } from "@material-ui/core/";
 
 import MainForm from './components/MainForm';
-import PaperSheet from './components/material-components/DialogBox';
 import LinearDeterminate from './components/material-components/ProgressBar';
 
 const themeObject = {
@@ -44,7 +43,8 @@ function App() {
   const [state, setState] = React.useState({
     checkedA: true,
     checkedB: false,
-    entry: false
+    entry: false,
+    // phrase: ['Here it is!', 'Keep it up!', 'You almost done!']
   });
 
   const handleChange = name => event => {
@@ -69,6 +69,8 @@ function App() {
       return complete;
     });
   }, [complete]);
+
+  
 
   switch(entry) {
     case false:
@@ -137,7 +139,13 @@ function App() {
                     </Typography>
                   </div>
                 </div>
-                <PaperSheet className='fade'/>
+                <Paper style={{padding: '5%'}}>
+                  <Typography variant="body2" component="p">
+                    <small>
+                    Some text
+                    </small>
+                  </Typography>
+                </Paper>
               </Grid>
             </Grid>
             </Paper>
