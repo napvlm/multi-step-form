@@ -1,12 +1,9 @@
 import React from 'react';
 import { Slider, Input } from '@material-ui/core/';
 
-function valuetext(value) {
-  return `${value}m²`;
-}
 
 export default function DiscreteSlider({ values, handleChange }) {
-  const [value, setValue] = React.useState(25);
+  const [value, setValue] = React.useState(values.areaSpace);
 
   const handleSliderChange = (event, newValue) => {
     setValue(newValue);
@@ -33,21 +30,21 @@ export default function DiscreteSlider({ values, handleChange }) {
         onBlur={handleBlur}
         inputProps={{
           step: 1,
-          min: 25,
-          max: 400,
+          min: 0,
+          max: 800,
           type: 'number',
           'aria-labelledby': 'input-slider',
         }}
       />
       <Slider
         style={{marginTop: '20px'}}
-        getAriaValueText={valuetext}
         value={typeof value === 'number' ? value : 0}
         onChange={handleSliderChange}
         aria-labelledby="input-slider"
         step={1}
-        min={25}
-        max={400}
+        min={0}
+        max={800}
+        onChangeCommitted={handleChange}
       />
     </div>
   );

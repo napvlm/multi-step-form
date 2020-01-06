@@ -10,7 +10,7 @@ export class MainForm extends Component {
   state = {
     step: 1,
     propertyType: 'House',
-    areaSpace: '',
+    areaSpace: 40,
     designStyle: 'Luxury',
   }
 
