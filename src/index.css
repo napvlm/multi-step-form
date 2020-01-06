@@ -77,3 +77,19 @@ input[type=number] {
   margin-top: 20px;
   margin-bottom: 20px;
 }
+
+.radioCards .MuiRadio-root {
+  position: absolute;
+  bottom: 7px;
+}
+
+.radioCards .MuiTypography-body1 {
+  margin-left: 25px;
+}
+
+.radioCards label{
+  width: 100%;
+  height:100%;
+  position: absolute;
+  bottom: 0;
+}

@@ -1,13 +1,12 @@
 import React from 'react';
-import { Grid, Card, CardActionArea, CardContent, CardMedia, Radio, FormControlLabel, FormControl, RadioGroup } from '@material-ui/core';
-
+import { Grid, Card, CardActionArea, CardContent, CardMedia, Radio, FormControlLabel, FormControl, RadioGroup, Typography } from '@material-ui/core';
 
 export default function DesignStyleCards({ values, handleChange }) {
 
   return (
-    <FormControl component="fieldset" style={{marginTop: '20px', marginBottom: '20px'}}>
+    <FormControl component="fieldset" style={{marginTop: '20px', marginBottom: '20px'}} className='radioCards'>
       <RadioGroup aria-label="position" name="position" value={values.designStyle} onChange={handleChange('designStyle')} row>
-        <Grid container spacing={3} >
+        <Grid container spacing={3}>
           <Grid item xs={4}>
             <Card>
               <CardActionArea>
@@ -22,9 +21,10 @@ export default function DesignStyleCards({ values, handleChange }) {
                 <FormControlLabel
                   value="Luxury"
                   control={<Radio color="primary"/>}
-                  label="Luxury"
-                  labelPlacement="end"
                 />
+                <Typography variant="body1">
+                  Luxury
+                </Typography>
                 </CardContent>
               </CardActionArea>
             </Card>
@@ -43,9 +43,10 @@ export default function DesignStyleCards({ values, handleChange }) {
                   <FormControlLabel
                     value="Minimal"
                     control={<Radio color="primary" />}
-                    label="Minimal"
-                    labelPlacement="end"
                   />
+                  <Typography variant="body1">
+                    Minimal
+                  </Typography>
                 </CardContent>
               </CardActionArea>
             </Card>
@@ -64,9 +65,10 @@ export default function DesignStyleCards({ values, handleChange }) {
                 <FormControlLabel
                   value="Scandinavian"
                   control={<Radio color="primary" />}
-                  label="Scandinavian"
-                  labelPlacement="end"
                 />
+                <Typography variant="body1">
+                  Scandinavian
+                </Typography>
                 </CardContent>
               </CardActionArea>
             </Card>

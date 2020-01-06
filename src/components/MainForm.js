@@ -14,10 +14,6 @@ export class MainForm extends Component {
     designStyle: 'Luxury',
   }
 
-  componentDidUpdate() {
-    
-  }
-
   // Proceed to the next step
   nextStep = () => {
     const { step } = this.state;
