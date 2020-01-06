@@ -32,9 +32,14 @@ code {
   margin-left: 12px;
 }
 
+.MuiTypography-colorTextSecondary {
+  text-transform: capitalize;
+}
+
 .fade {
   -webkit-animation: fade 500ms ease-in;
   animation: fade 500ms ease-in; 
+  margin: 10px 20px;
 }
 
 @keyframes fade {
@@ -66,4 +71,9 @@ input::-webkit-inner-spin-button {
 /* Firefox */
 input[type=number] {
   -moz-appearance:textfield;
+}
+
+.mtmb20 {
+  margin-top: 20px;
+  margin-bottom: 20px;
 }

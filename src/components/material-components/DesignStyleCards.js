@@ -2,18 +2,12 @@ import React from 'react';
 import { Grid, Card, CardActionArea, CardContent, CardMedia, Radio, FormControlLabel, FormControl, RadioGroup } from '@material-ui/core';
 
 
-export default function DesignStyleCards({ handleChange }) {
-  // const [value, setValue] = React.useState('');
-
-  // const handleChange = event => {
-  //   setValue(event.target.value);
-  //   console.log(value)
-  // };
+export default function DesignStyleCards({ values, handleChange }) {
 
   return (
-    <FormControl component="fieldset">
-      <RadioGroup aria-label="position" name="position"  onChange={handleChange('designStyle')} row>
-        <Grid container spacing={3} style={{padding: '3%'}}>
+    <FormControl component="fieldset" style={{marginTop: '20px', marginBottom: '20px'}}>
+      <RadioGroup aria-label="position" name="position" value={values.designStyle} onChange={handleChange('designStyle')} row>
+        <Grid container spacing={3} >
           <Grid item xs={4}>
             <Card>
               <CardActionArea>
@@ -26,7 +20,7 @@ export default function DesignStyleCards({ handleChange }) {
                 />
                 <CardContent>
                 <FormControlLabel
-                  value="luxury"
+                  value="Luxury"
                   control={<Radio color="primary"/>}
                   label="Luxury"
                   labelPlacement="end"
@@ -47,7 +41,7 @@ export default function DesignStyleCards({ handleChange }) {
                 />
                 <CardContent>
                   <FormControlLabel
-                    value="minimal"
+                    value="Minimal"
                     control={<Radio color="primary" />}
                     label="Minimal"
                     labelPlacement="end"
@@ -68,7 +62,7 @@ export default function DesignStyleCards({ handleChange }) {
                 />
                 <CardContent>
                 <FormControlLabel
-                  value="scandinavian"
+                  value="Scandinavian"
                   control={<Radio color="primary" />}
                   label="Scandinavian"
                   labelPlacement="end"

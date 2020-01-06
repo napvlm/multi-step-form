@@ -5,8 +5,8 @@ function valuetext(value) {
   return `${value}m²`;
 }
 
-export default function DiscreteSlider({ handleChange }) {
-  const [value, setValue] = React.useState(0);
+export default function DiscreteSlider({ values, handleChange }) {
+  const [value, setValue] = React.useState(25);
 
   const handleSliderChange = (event, newValue) => {
     setValue(newValue);
@@ -25,7 +25,7 @@ export default function DiscreteSlider({ handleChange }) {
   };
 
   return (
-    <div style={{marginLeft: '20px'}} onChange={handleChange('areaSpace')}>
+    <div onChange={handleChange('areaSpace')} style={{marginTop: '20px', marginBottom: '20px'}}>
       <Input
         value={value}
         margin="dense"
@@ -40,13 +40,13 @@ export default function DiscreteSlider({ handleChange }) {
         }}
       />
       <Slider
-        style={{marginTop: '40px'}}
+        style={{marginTop: '20px'}}
         getAriaValueText={valuetext}
         value={typeof value === 'number' ? value : 0}
         onChange={handleSliderChange}
         aria-labelledby="input-slider"
         step={1}
-        min={0}
+        min={25}
         max={400}
       />
     </div>

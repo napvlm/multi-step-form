@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 
-import { MuiThemeProvider, createMuiTheme, Grid, Container, Switch, FormControlLabel, CssBaseline, Paper, Button, Typography, Divider, Avatar } from "@material-ui/core/";
+import { MuiThemeProvider, createMuiTheme, Grid, Container, Switch, FormControlLabel, CssBaseline, Paper, Button, Typography, Divider, Avatar } from '@material-ui/core/';
 
 import MainForm from './components/MainForm';
 import LinearDeterminate from './components/material-components/ProgressBar';
@@ -12,7 +12,21 @@ const themeObject = {
     background: {
       dark: '#212121',
       light: '#f4f4f4'
-    }
+    },
+    primary: {
+      light: '#1769aa',
+      main: '#2196f3',
+      dark: '#4dabf5',
+      contrastText: '#f4f4f4'
+    },
+    secondary: {
+      light: '#1c54b2',
+      main: '#2979ff',
+      dark: '#5393ff',
+      contrastText: '#f4f4f4',
+    },
+    contrastThreshold: 3,
+    tonalOffset: 0.2,
   }
 }
 
@@ -34,7 +48,6 @@ const useDarkMode = () => {
   return [theme, toggleDarkMode];
 }
 
-
 function App() {
   // Making the dark/light mode toggle
   const [theme, toggleDarkMode] = useDarkMode();
@@ -43,8 +56,7 @@ function App() {
   const [state, setState] = React.useState({
     checkedA: true,
     checkedB: false,
-    entry: false,
-    // phrase: ['Here it is!', 'Keep it up!', 'You almost done!']
+    entry: false
   });
 
   const handleChange = name => event => {
@@ -63,7 +75,7 @@ function App() {
 
   React.useEffect(() => {
     setCompleted(oldCompleted => {
-      if (oldCompleted >= 100) {
+      if (oldCompleted >= 101) {
         return 0;
       }
       return complete;

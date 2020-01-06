@@ -9,9 +9,13 @@ import Success from './Success';
 export class MainForm extends Component {
   state = {
     step: 1,
-    propertyType: '',
+    propertyType: 'House',
     areaSpace: '',
-    designStyle: '',
+    designStyle: 'Luxury',
+  }
+
+  componentDidUpdate() {
+    
   }
 
   // Proceed to the next step
@@ -34,7 +38,7 @@ export class MainForm extends Component {
     this.props.setCompleted(this.props.complete - 25);
   }
 
-  // Handle fields change
+  // Handle inputs change
   handleChange = input => event => {
     this.setState({ [input]: event.target.value });
   }

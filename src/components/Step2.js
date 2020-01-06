@@ -6,15 +6,15 @@ import { Typography, Button } from '@material-ui/core';
 export class Step2 extends Component {
   
   render() {
-    const { handleChange } = this.props;
+    const { values, handleChange } = this.props;
 
     return (
       <div>
         <div className="fade">
-          <Typography variant="h5" style={{padding: '10px 20px'}}>
+          <Typography variant="h5">
             How many square meters does your property have?
           </Typography>
-          <DiscreteSlider handleChange={handleChange} />
+          <DiscreteSlider values={values} handleChange={handleChange} style={{marginTop: '20px', marginBottom: '20px'}} />
         </div>
         <div style={{margin: '10px 20px'}}>
           <Button variant="outlined" onClick={this.props.previousStep}>
