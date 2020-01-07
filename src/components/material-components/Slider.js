@@ -44,7 +44,9 @@ export default function DiscreteSlider({ values, handleChange }) {
         step={1}
         min={0}
         max={800}
-        onChangeCommitted={handleChange}
+        onChangeCommitted={(event, value) =>
+          handleChange("areaSpace")({ target: { value } })
+        }
       />
     </div>
   );

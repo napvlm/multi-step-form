@@ -82,7 +82,7 @@ function App() {
     });
   }, [complete]);
 
-  
+
 
   switch(entry) {
     case false:
