@@ -7,7 +7,7 @@ export default function DesignStyleCards({ values, handleChange }) {
     <FormControl component="fieldset" style={{marginTop: '20px', marginBottom: '20px'}} className='radioCards'>
       <RadioGroup aria-label="position" name="position" value={values.designStyle} onChange={handleChange('designStyle')} row>
         <Grid container spacing={3}>
-          <Grid item xs={4}>
+          <Grid item xs={12} sm={4} className='scrollContainer'>
             <Card>
               <CardActionArea>
                 <CardMedia
@@ -29,7 +29,7 @@ export default function DesignStyleCards({ values, handleChange }) {
               </CardActionArea>
             </Card>
           </Grid>
-          <Grid item xs={4}>
+          <Grid item xs={12} sm={4}>
             <Card>
               <CardActionArea>
                 <CardMedia
@@ -51,7 +51,7 @@ export default function DesignStyleCards({ values, handleChange }) {
               </CardActionArea>
             </Card>
           </Grid>
-          <Grid item xs={4}>
+          <Grid item xs={12} sm={4}>
             <Card>
               <CardActionArea>
                 <CardMedia

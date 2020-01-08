@@ -13,11 +13,13 @@ code {
     monospace;
 }
 
-.MuiContainer-root {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%,-50%);
+@media (min-width: 600px) {
+  .MuiContainer-root {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+  }    
 }
 
 .column-image {
@@ -92,4 +94,29 @@ input[type=number] {
   height:100%;
   position: absolute;
   bottom: 0;
+}
+
+/* responsive styles */
+@media (max-width: 600px) {
+  .column-image {
+    height: 200px;
+    margin: 0;
+  }
+  
+  body {
+    padding: 0;
+  }
+
+  .MuiTypography-body1 {
+    font-size: .7rem;
+  }
+
+  .MuiTypography-h5 {
+    font-size: 1rem;
+  }
+
+  .MuiButton-root {
+    font-size: .6rem;
+  }
+
 }

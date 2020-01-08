@@ -98,10 +98,10 @@ function App() {
           <Container maxWidth="md">
             <Paper>
               <Grid container spacing={3}>
-                <Grid item xs={6}>
+                <Grid item xs={12} sm={6}>
                   <Paper className="column-image" />
                 </Grid>
-                <Grid item xs={6} style={{padding: '5%'}}>
+                <Grid item xs={12} sm={6} style={{padding: '5%'}}>
                   <Typography variant="h5" style={{marginBottom: '20px'}}>
                     Find out the cost of your interior design project
                   </Typography>
@@ -140,7 +140,6 @@ function App() {
           </Container>
         </MuiThemeProvider>
       )
-
       default:
   }
 }
