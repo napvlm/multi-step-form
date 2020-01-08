@@ -107,16 +107,4 @@ input[type=number] {
     padding: 0;
   }
 
-  .MuiTypography-body1 {
-    font-size: .7rem;
-  }
-
-  .MuiTypography-h5 {
-    font-size: 1rem;
-  }
-
-  .MuiButton-root {
-    font-size: .6rem;
-  }
-
 }
