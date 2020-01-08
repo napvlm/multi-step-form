@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 
-import { MuiThemeProvider, createMuiTheme, Grid, Container, Switch, FormControlLabel, CssBaseline, Paper, Button, Typography, Divider, Avatar } from '@material-ui/core/';
+import { MuiThemeProvider, createMuiTheme, Grid, Container, Switch, FormControlLabel, CssBaseline, Paper, Button, Typography, Divider } from '@material-ui/core/';
 
 import MainForm from './components/MainForm';
 import LinearDeterminate from './components/material-components/ProgressBar';
@@ -130,36 +130,12 @@ function App() {
           <CssBaseline/>
           <Container maxWidth="md">
             <Paper className="fade">
-            <Grid container spacing={3}>
-              <Grid item xs={9}>
               <Typography variant="body1" style={{padding: '10px 20px'}}>
                 Calculate the costs of your design project
                 </Typography>
                 <Divider />
                 <MainForm complete={complete} setCompleted={setCompleted} />
                 <LinearDeterminate complete={complete} setCompleted={setCompleted} />
-              </Grid>
-              <Grid item xs={3}>
-                <div style={{display: 'flex'}}>
-                  <Avatar alt="Johny Simpson - Lead designer" src="https://randomuser.me/api/portraits/men/22.jpg" className="bigAvatar" />
-                  <div style={{marginLeft: '10px'}}>
-                    <Typography variant="body1">
-                      John Simpson
-                    </Typography>
-                    <Typography variant="body2">
-                      <i>- Lead Designer</i>
-                    </Typography>
-                  </div>
-                </div>
-                <Paper style={{padding: '5%'}}>
-                  <Typography variant="body2" component="p">
-                    <small>
-                    Some text
-                    </small>
-                  </Typography>
-                </Paper>
-              </Grid>
-            </Grid>
             </Paper>
           </Container>
         </MuiThemeProvider>
