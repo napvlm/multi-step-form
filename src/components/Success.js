@@ -12,7 +12,7 @@ export class Sucess extends Component {
           As a bonus for taking the survey, we will send you a discount code and studio catalog as a bonus. <br/>
           Leave your e-mail address to get them.
         </Typography>
-        <form noValidate autoComplete="off">
+        <form autoComplete="off">
           <TextField id="outlined-basic" label="Your e-mail" variant="outlined" type="email" required={true} style={{marginTop: '20px'}}/>
           <br/>
           <Button type="submit" variant="contained" color="primary" style={{marginTop: '20px'}}>
