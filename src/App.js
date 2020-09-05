@@ -15,8 +15,8 @@ const themeObject = {
     },
     primary: {
       light: '#1769aa',
-      main: '#2196f3',
-      dark: '#4dabf5',
+      main: '#ffb74d',
+      dark: '#ffb74d',
       contrastText: '#f4f4f4'
     },
     secondary: {
