@@ -4,7 +4,7 @@ import './App.css';
 import { MuiThemeProvider, createMuiTheme, Grid, Container, Switch, FormControlLabel, CssBaseline, Paper, Button, Typography, Divider } from '@material-ui/core/';
 
 import MainForm from './components/MainForm';
-import LinearDeterminate from './components/material-components/ProgressBar';
+import LinearDeterminate from './components/material-components/progressBar';
 
 const themeObject = {
   palette: {
